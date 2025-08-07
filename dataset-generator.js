@@ -527,34 +527,295 @@ class TalkativeDatasetGenerator {
         if (turn === 1) {
             return this.generatePersonaSpecificConversation(persona, skill);
         } else if (turn === totalTurns) {
-            return {
-                userQuery: "Thanks, that's perfect!",
-                apiResponse: "You're welcome! I'm always here to help. Have a great day!"
-            };
+            return this.getClosingTurn(persona);
         } else {
-            return {
-                userQuery: "Can you adjust that a bit more?",
-                apiResponse: "Absolutely! I've made the adjustment. How does that look now?"
-            };
+            return this.getFollowUpTurn(persona, skill, turn);
         }
     }
 
-    generateMultiIntentQuery(persona, skills) {
-        const device1 = this.getRandomElement(this.lgDevices);
-        const device2 = this.getRandomElement(this.homeyDevices);
-        
-        return {
-            userQuery: `Talkative, turn on the ${device1}, check the weather, and set a timer for 30 minutes`,
-            apiResponse: `I've turned on your LG ${device1}, the current weather is 72°F and sunny, and I've set a 30-minute timer. Anything else you need?`
+    getFollowUpTurn(persona, skill, turn) {
+        const followUps = {
+            'Device control': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "Can you also set it to schedule mode for weekdays?",
+                        apiResponse: "Perfect! I've enabled schedule mode for weekdays. It will automatically run Monday through Friday at your preferred times."
+                    },
+                    {
+                        userQuery: "What's the energy consumption looking like?",
+                        apiResponse: "Current energy usage is 15% below average. The eco settings are saving you approximately $12 per month on your electric bill."
+                    }
+                ],
+                'Senior Citizens in Assisted Living': [
+                    {
+                        userQuery: "Is it working correctly now?",
+                        apiResponse: "Yes, everything is working perfectly! The device is running smoothly and all settings are just right for you."
+                    },
+                    {
+                        userQuery: "Can you make it a little quieter?",
+                        apiResponse: "Of course! I've reduced the fan speed to make it much quieter while still maintaining effectiveness."
+                    }
+                ],
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "Add this to my evening routine as well",
+                        apiResponse: "Done! I've added this device control to your evening routine. It will now activate automatically with your other evening settings."
+                    },
+                    {
+                        userQuery: "Can you sync this with the other appliances?",
+                        apiResponse: "Absolutely! I've synchronized this with your other smart appliances for coordinated operation and optimal energy efficiency."
+                    }
+                ]
+            },
+            'Weather': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "What about the weekend forecast?",
+                        apiResponse: "This weekend looks great! Saturday will be sunny and 78°F, Sunday partly cloudy with highs of 75°F. Perfect for any outdoor plans you might have."
+                    }
+                ],
+                'Hotel Guests': [
+                    {
+                        userQuery: "Should I pack a jacket for tonight?",
+                        apiResponse: "Yes, I'd recommend a light jacket. Temperature will drop to 58°F this evening with a cool breeze from the ocean."
+                    }
+                ]
+            },
+            'Web Q&A': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "Can you find more recent articles about that?",
+                        apiResponse: "I found several articles from this week. TechCrunch and The Verge both published updated guides with 2025 recommendations and new security features."
+                    }
+                ],
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "What about compatibility with my existing setup?",
+                        apiResponse: "Based on your current devices, you'll have full compatibility. Your Samsung SmartThings hub supports all the recommended protocols."
+                    }
+                ]
+            },
+            'Timer': [
+                {
+                    userQuery: "Can you add 5 more minutes to that?",
+                    apiResponse: "Sure! I've extended the timer by 5 minutes. The new total time is 25 minutes remaining."
+                }
+            ],
+            'Alarm': [
+                {
+                    userQuery: "Actually, make that 15 minutes earlier",
+                    apiResponse: "No problem! I've moved your alarm 15 minutes earlier. Your new wake-up time is set for 6:15 AM."
+                }
+            ]
         };
+
+        // Get skill-specific follow-ups
+        const skillFollowUps = followUps[skill];
+        if (skillFollowUps) {
+            if (skillFollowUps[persona]) {
+                return this.getRandomElement(skillFollowUps[persona]);
+            } else if (Array.isArray(skillFollowUps)) {
+                return this.getRandomElement(skillFollowUps);
+            }
+        }
+
+        // Generic but contextual follow-ups based on persona
+        const genericFollowUps = {
+            'Tech-Savvy Renters': [
+                {
+                    userQuery: "Can you show me the settings for that?",
+                    apiResponse: "Here are the current settings displayed on your phone. You can adjust any of these through the app or just ask me to change them."
+                }
+            ],
+            'Senior Citizens in Assisted Living': [
+                {
+                    userQuery: "Is that the right setting?",
+                    apiResponse: "Yes, that's exactly the right setting for what you need. Everything is working properly now."
+                }
+            ],
+            'Millennials and Gen Z': [
+                {
+                    userQuery: "That's perfect, thanks!",
+                    apiResponse: "You're welcome! Glad I could help make things easier for you. Anything else you need?"
+                }
+            ]
+        };
+
+        if (genericFollowUps[persona]) {
+            return this.getRandomElement(genericFollowUps[persona]);
+        }
+
+        // Final fallback
+        return {
+            userQuery: "Perfect, that's exactly what I needed",
+            apiResponse: "Great! I'm glad I could help you get that set up just right."
+        };
+    }
+
+    getClosingTurn(persona) {
+        const closingTurns = {
+            'Tech-Savvy Renters': [
+                {
+                    userQuery: "Awesome, thanks for the help!",
+                    apiResponse: "You're welcome! Feel free to ask if you need any other smart home optimizations."
+                }
+            ],
+            'Senior Citizens in Assisted Living': [
+                {
+                    userQuery: "Thank you so much for your patience",
+                    apiResponse: "It was my pleasure to help! I'm always here whenever you need assistance with anything."
+                }
+            ],
+            'Homeowners with Smart Ecosystems': [
+                {
+                    userQuery: "Great, that integrates perfectly with everything else",
+                    apiResponse: "Excellent! Your smart home ecosystem is now fully synchronized and optimized. Have a great day!"
+                }
+            ],
+            'Hotel Guests': [
+                {
+                    userQuery: "Perfect, thanks for making my stay easier",
+                    apiResponse: "You're very welcome! I hope you enjoy the rest of your stay. Let me know if you need anything else."
+                }
+            ],
+            'Users with Mobility or Vision Challenges': [
+                {
+                    userQuery: "That makes things so much easier for me, thank you",
+                    apiResponse: "I'm so glad I could help make things more accessible for you. I'm always here to assist with anything you need."
+                }
+            ],
+            'Millennials and Gen Z': [
+                {
+                    userQuery: "You're the best! This is exactly what I needed",
+                    apiResponse: "Aww thanks! Happy I could help you out. Hit me up whenever you need anything! ✨"
+                }
+            ],
+            'Early Adopters of Ambient Tech': [
+                {
+                    userQuery: "Impressive AI capabilities - this is the future of ambient computing",
+                    apiResponse: "Thank you! This is just the beginning of truly intuitive ambient technology. Excited to be part of your smart environment journey."
+                }
+            ]
+        };
+
+        if (closingTurns[persona]) {
+            return this.getRandomElement(closingTurns[persona]);
+        }
+
+        return {
+            userQuery: "Thanks, that's perfect!",
+            apiResponse: "You're welcome! I'm always here to help. Have a great day!"
+        };
+    }
+
+    generateMultiIntentQuery(persona, skills) {
+        const multiIntentTemplates = {
+            'Tech-Savvy Renters': [
+                {
+                    userQuery: "Turn on the air conditioner, check the weather for tomorrow, and set a timer for 30 minutes",
+                    apiResponse: "Got it! I've turned on your AC to 72°F, tomorrow will be sunny and 78°F, and I've set a 30-minute timer. Anything else you need?"
+                },
+                {
+                    userQuery: "Start the robot vacuum, what's the latest tech news, and create a bedtime routine",
+                    apiResponse: "Your robot vacuum is cleaning, top tech news includes OpenAI's new release and Apple's earnings beat. I've created a bedtime routine - would you like to customize it?"
+                }
+            ],
+            'Homeowners with Smart Ecosystems': [
+                {
+                    userQuery: "Activate morning routine, check calendar for today, and adjust the thermostat to 74 degrees",
+                    apiResponse: "Morning routine activated! Today you have a 10 AM meeting with the contractors and lunch at 12:30. Thermostat is now set to 74°F. Good morning!"
+                },
+                {
+                    userQuery: "Turn off all lights except kitchen, set alarm for 6 AM, and start the dishwasher on eco mode",
+                    apiResponse: "Done! All lights are off except kitchen, 6 AM alarm is set, and your dishwasher is running on eco mode. Estimated completion in 2 hours."
+                }
+            ],
+            'Senior Citizens in Assisted Living': [
+                {
+                    userQuery: "Can you turn on the TV, remind me about my medicine, and tell me what the weather is like?",
+                    apiResponse: "Of course! I've turned on your TV to channel 7, set a reminder for your 2 PM medicine, and today is sunny and 68°F - perfect for a walk!"
+                }
+            ],
+            'Millennials and Gen Z': [
+                {
+                    userQuery: "Start my morning playlist, brew coffee, and tell me what's trending today",
+                    apiResponse: "Your playlist is bumping! ☕ Coffee's brewing, and today's trends include sustainable fashion, new TikTok challenges, and the latest Netflix drop everyone's watching!"
+                }
+            ],
+            'Hotel Guests': [
+                {
+                    userQuery: "Set the room temperature to 70, what time is checkout, and can you call a taxi for 9 AM?",
+                    apiResponse: "Room temperature set to 70°F, checkout is at 11 AM, and I've arranged a taxi pickup for 9 AM tomorrow. Confirmation number is TXI-4829."
+                }
+            ]
+        };
+
+        const templates = multiIntentTemplates[persona] || multiIntentTemplates['Tech-Savvy Renters'];
+        return this.getRandomElement(templates);
     }
 
     generateMultiTurnMultiIntentConversation(persona, skills, turn, totalTurns) {
         if (turn === 1) {
             return this.generateMultiIntentQuery(persona, skills);
+        } else if (turn === totalTurns) {
+            return this.getClosingTurn(persona);
         } else {
-            return this.generateMultiTurnConversation(persona, skills[0], turn, totalTurns);
+            // Follow up on one of the intents from the first turn
+            const followUpSkill = this.getRandomElement(skills);
+            return this.getMultiIntentFollowUp(persona, followUpSkill, turn);
         }
+    }
+
+    getMultiIntentFollowUp(persona, skill, turn) {
+        const followUps = {
+            'Device control': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "Actually, can you make the AC a bit cooler?",
+                        apiResponse: "Sure! I've lowered it to 70°F. That should feel more comfortable in a few minutes."
+                    }
+                ],
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "Add the patio lights to that routine too",
+                        apiResponse: "Perfect! I've added the patio lights to your morning routine. They'll now turn on automatically with everything else."
+                    }
+                ]
+            },
+            'Weather': [
+                {
+                    userQuery: "What about the rest of the week?",
+                    apiResponse: "The rest of the week looks great! Wednesday through Friday will be mostly sunny with temperatures in the mid-70s. Perfect weather ahead!"
+                }
+            ],
+            'Timer': [
+                {
+                    userQuery: "How much time is left on that timer?",
+                    apiResponse: "You have 18 minutes and 23 seconds remaining on your timer. I'll let you know when it's time!"
+                }
+            ],
+            'Calendar': [
+                {
+                    userQuery: "Can you move that lunch meeting 30 minutes later?",
+                    apiResponse: "I've moved your lunch meeting from 12:30 to 1:00 PM and sent the update to all attendees. Is that better for your schedule?"
+                }
+            ]
+        };
+
+        const skillFollowUps = followUps[skill];
+        if (skillFollowUps) {
+            if (skillFollowUps[persona]) {
+                return this.getRandomElement(skillFollowUps[persona]);
+            } else if (Array.isArray(skillFollowUps)) {
+                return this.getRandomElement(skillFollowUps);
+            }
+        }
+
+        // Generic contextual follow-up
+        return {
+            userQuery: "Can you confirm that's all set up correctly?",
+            apiResponse: "Yes, everything is configured perfectly! All your requests have been completed successfully."
+        };
     }
 
     generateConversationId() {
