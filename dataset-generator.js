@@ -199,100 +199,100 @@ class TalkativeDatasetGenerator {
         const templates = {
             'Tech-Savvy Renters': [
                 {
-                    userQuery: `Hey Talkative, can you turn on the ${lgDevice} and set it to eco mode?`,
-                    apiResponse: `Sure! I'm turning on your LG ${lgDevice} and setting it to eco mode. The device should be ready in a moment.`
+                    userQuery: `Turn on the ${lgDevice} and set it to energy saving mode`,
+                    apiResponse: `Your LG ${lgDevice} is now on and set to energy saving mode. You'll save about 20% on power consumption with this setting.`
                 },
                 {
-                    userQuery: `Talkative, optimize my ${homeyDevice} settings for energy efficiency`,
-                    apiResponse: `I've optimized your ${homeyDevice} settings for maximum energy efficiency. You should see reduced power consumption starting now.`
+                    userQuery: `Can you start the ${homeyDevice} and send me a notification when it's done?`,
+                    apiResponse: `I've started your ${homeyDevice} and set up a notification for completion. I'll ping your phone when it's finished.`
                 },
                 {
-                    userQuery: `Can you create a smart scene that dims the lights and turns on the ${lgDevice}?`,
-                    apiResponse: `Absolutely! I've created a custom scene called "Relax Mode" that dims your lights to 30% and turns on your LG ${lgDevice}. Would you like to activate it now?`
+                    userQuery: `Set the washing machine to delicate cycle and add extra rinse`,
+                    apiResponse: `Perfect! I've set your LG washing machine to delicate cycle with extra rinse. The cycle will take about 58 minutes to complete.`
                 }
             ],
             'Senior Citizens in Assisted Living': [
                 {
-                    userQuery: `Talkative, please turn on the ${lgDevice}. I'm having trouble with the remote.`,
-                    apiResponse: `Of course! I'm turning on your LG ${lgDevice} right now. Is there anything else you'd like me to help you with?`
+                    userQuery: `Please turn on the ${lgDevice}, the buttons are too small for me to see`,
+                    apiResponse: `Of course! I've turned on your LG ${lgDevice} for you. Would you like me to adjust any settings, or is this good for now?`
                 },
                 {
-                    userQuery: `Can you help me with the ${homeyDevice}? I don't know how to use it.`,
-                    apiResponse: `I'd be happy to help! I'm turning on your ${homeyDevice} for you. If you need to adjust any settings, just ask me and I'll take care of it.`
+                    userQuery: `Can you help me turn up the heat? I'm feeling chilly`,
+                    apiResponse: `I'm raising the temperature to 74°F to help you feel more comfortable. It should warm up in about 10 minutes. Let me know if you need it warmer.`
                 },
                 {
-                    userQuery: `Talkative, make the house warmer please. I'm feeling cold.`,
-                    apiResponse: `I'm adjusting your thermostat to make it warmer. I've increased the temperature by 3 degrees. It should start feeling more comfortable in a few minutes.`
+                    userQuery: `Make the TV louder please, I can't hear it well`,
+                    apiResponse: `I've increased the TV volume to a more comfortable level for you. I've also enhanced the dialogue clarity to make voices easier to hear.`
                 }
             ],
             'Homeowners with Smart Ecosystems': [
                 {
-                    userQuery: `Talkative, activate my morning routine with the ${lgDevice} and ${homeyDevice}`,
-                    apiResponse: `Good morning! I'm activating your morning routine. Starting your LG ${lgDevice}, adjusting the ${homeyDevice}, and turning on your other connected devices. Everything should be ready in 2 minutes.`
+                    userQuery: `Start the dishwasher on eco mode and notify me when it needs detergent refill`,
+                    apiResponse: `Your LG dishwasher is now running on eco mode. Current detergent level is at 30% - I'll remind you to refill after 2 more cycles.`
                 },
                 {
-                    userQuery: `Can you integrate the new ${lgDevice} with my existing smart home setup?`,
-                    apiResponse: `I've successfully integrated your new LG ${lgDevice} with your smart home ecosystem. It's now part of your existing routines and can be controlled through all your automation rules.`
+                    userQuery: `Turn on the robot vacuum for the downstairs area only, avoid the kids' playroom`,
+                    apiResponse: `I've activated your LG robot vacuum for downstairs cleaning, excluding the playroom. It will return to dock in approximately 45 minutes when finished.`
                 },
                 {
-                    userQuery: `Talkative, check the status of all my LG appliances`,
-                    apiResponse: `Here's your LG appliance status: Your ${lgDevice} is running efficiently, the refrigerator temperature is optimal, and your washing machine cycle will complete in 15 minutes. All systems are functioning normally.`
+                    userQuery: `Activate the air purifier on high mode, the air quality seems poor today`,
+                    apiResponse: `Your LG air purifier is now on high mode. Current air quality index is 78 - I'll monitor it and switch to auto mode once it improves to 'Good' levels.`
                 }
             ],
             'Hotel Guests': [
                 {
-                    userQuery: `Talkative, how do I control the ${lgDevice} in this room?`,
-                    apiResponse: `Welcome to your room! To control the LG ${lgDevice}, just ask me. I can turn it on, adjust settings, or help with any other room features. What would you like me to do?`
+                    userQuery: `How do I control the air conditioning in this room? It's too warm`,
+                    apiResponse: `I can help with that! I'm lowering the AC to 70°F for you. You can also ask me to adjust it anytime during your stay - no need to find the remote.`
                 },
                 {
-                    userQuery: `Can you turn on the ${homeyDevice} and set the room temperature to 72 degrees?`,
-                    apiResponse: `Certainly! I'm turning on the ${homeyDevice} and setting your room temperature to 72 degrees. The room should reach your preferred temperature in about 10 minutes.`
+                    userQuery: `Can you turn on the coffee maker? What options are available?`,
+                    apiResponse: `I've started the in-room coffee maker. You have options for regular, strong, or espresso. I've set it to regular - just let me know if you'd prefer a different strength.`
                 },
                 {
-                    userQuery: `Talkative, what services are available in this hotel room?`,
-                    apiResponse: `You have access to climate control, lighting, entertainment systems, and room service through me. I can also provide information about hotel amenities and local recommendations. How can I assist you?`
+                    userQuery: `Turn off all the lights except the bedside lamp`,
+                    apiResponse: `Done! I've turned off all room lights except your bedside lamp. I've also dimmed it to 40% for comfortable evening reading. Sleep well!`
                 }
             ],
             'Users with Mobility or Vision Challenges': [
                 {
-                    userQuery: `Talkative, I can't reach the ${lgDevice} controls. Can you help me turn it on?`,
-                    apiResponse: `Absolutely! I'm turning on your LG ${lgDevice} for you right now. I'm here to help with any controls that are difficult to reach. Just let me know what you need.`
+                    userQuery: `I can't reach the washing machine controls, can you start a normal wash cycle?`,
+                    apiResponse: `Absolutely! I've started a normal wash cycle on your LG washing machine. It will take 42 minutes. I'll announce loudly when it's finished so you'll know when to switch the clothes.`
                 },
                 {
-                    userQuery: `Can you describe what's happening with the ${homeyDevice} status?`,
-                    apiResponse: `Your ${homeyDevice} is currently on and functioning normally. The indicator light is green, which means it's operating properly. Would you like me to make any adjustments?`
+                    userQuery: `Please describe what mode the dishwasher is currently in`,
+                    apiResponse: `Your LG dishwasher is currently set to quick wash mode, which takes 30 minutes. The detergent dispenser is full, and the cycle will start as soon as you close the door.`
                 },
                 {
-                    userQuery: `Talkative, please announce when the ${lgDevice} cycle is complete`,
-                    apiResponse: `I've set up an announcement for when your LG ${lgDevice} cycle completes. I'll give you a clear audio notification so you know exactly when it's finished.`
+                    userQuery: `Turn on the ceiling fan and tell me what speed it's set to`,
+                    apiResponse: `I've turned on your ceiling fan to medium speed - that's setting 3 out of 5. The room should feel more comfortable in a few minutes. Would you like me to adjust the speed?`
                 }
             ],
             'Millennials and Gen Z': [
                 {
-                    userQuery: `Yo Talkative, turn on the ${lgDevice} and make it aesthetic AF`,
-                    apiResponse: `Got it! Turning on your LG ${lgDevice} with the perfect ambient settings. Added some mood lighting too - it's about to look absolutely aesthetic! ✨`
+                    userQuery: `Start the robot vacuum while I'm at work so my place looks clean for my date tonight`,
+                    apiResponse: `Say no more! 🤖 Your robot vacuum is starting its cleaning cycle now. Your place will be spotless by the time you get home. Good luck on your date! ✨`
                 },
                 {
-                    userQuery: `Talkative, can you connect my ${homeyDevice} to my social media for content creation?`,
-                    apiResponse: `I've optimized your ${homeyDevice} settings for content creation! The lighting and positioning are perfect for your videos. Want me to start a timer for your recording session?`
+                    userQuery: `Turn the washing machine to that setting that makes clothes smell amazing`,
+                    apiResponse: `Got you! I've set it to the Fresh Care+ cycle with extra fragrance boost. Your clothes are going to smell incredible! The cycle takes about an hour.`
                 },
                 {
-                    userQuery: `Make my smart home setup Insta-worthy with the ${lgDevice}`,
-                    apiResponse: `Creating the perfect Insta-worthy vibe! I'm adjusting your LG ${lgDevice}, syncing the lighting, and setting up the ideal atmosphere for your content. Ready to go viral! 📱✨`
+                    userQuery: `Make the fridge colder, my drinks aren't getting cold enough for my friends coming over`,
+                    apiResponse: `Party mode activated! 🎉 I've lowered your fridge temp to get those drinks perfectly chilled. Give it 30 minutes and they'll be ice cold for your hangout!`
                 }
             ],
             'Early Adopters of Ambient Tech': [
                 {
-                    userQuery: `Talkative, demonstrate the latest features of the ${lgDevice} with ambient integration`,
-                    apiResponse: `Showcasing cutting-edge features! Your LG ${lgDevice} now has predictive ambient adjustments, seamless IoT integration, and AI-powered optimization. I'm activating the full ambient experience.`
+                    userQuery: `Optimize all appliances for peak energy efficiency based on current usage patterns`,
+                    apiResponse: `Analyzing your usage patterns... I've optimized 8 connected appliances using machine learning algorithms. Predicted energy savings: 23% this month based on your consumption data.`
                 },
                 {
-                    userQuery: `Can you show me the advanced automation capabilities with the ${homeyDevice}?`,
-                    apiResponse: `Absolutely! I'm demonstrating advanced automation with your ${homeyDevice}. This includes ML-based behavior prediction, contextual adaptation, and seamless integration with your entire ambient ecosystem.`
+                    userQuery: `Show me the predictive maintenance status for my LG appliances`,
+                    apiResponse: `Running diagnostics on all LG appliances: Refrigerator filter needs replacement in 3 weeks, washing machine performing optimally, dishwasher showing minor efficiency drop - scheduling service check.`
                 },
                 {
-                    userQuery: `Talkative, what's the latest update for ambient technology integration?`,
-                    apiResponse: `The latest ambient tech update includes enhanced spatial awareness, improved predictive algorithms, and better cross-device communication. I'm updating your system with these new capabilities right now.`
+                    userQuery: `Enable ambient mode on all devices - I want the house to learn my preferences`,
+                    apiResponse: `Ambient learning mode activated across all connected devices. Your home will now observe patterns and preferences to proactively adjust settings. Machine learning models are initializing.`
                 }
             ]
         };
@@ -305,42 +305,178 @@ class TalkativeDatasetGenerator {
             'Weather': {
                 'Tech-Savvy Renters': [
                     {
-                        userQuery: "Talkative, what's the weather forecast for my commute tomorrow?",
-                        apiResponse: "Tomorrow's forecast shows 72°F with partly cloudy skies. Light traffic expected during your usual commute time. Perfect weather for walking or cycling to work!"
+                        userQuery: "What's the weather in downtown Seattle? I'm thinking of biking to work",
+                        apiResponse: "Seattle downtown is currently 52°F with light rain. I'd recommend taking the bus today - there's a 70% chance of rain through 10 AM."
+                    },
+                    {
+                        userQuery: "Will it rain this weekend? Planning a rooftop party",
+                        apiResponse: "This weekend looks great for your rooftop party! Saturday will be sunny and 75°F, Sunday partly cloudy with highs of 72°F. No rain expected."
                     }
                 ],
                 'Senior Citizens in Assisted Living': [
                     {
-                        userQuery: "Talkative, will it be a good day to go outside?",
-                        apiResponse: "Yes, it's a lovely day! The temperature is a comfortable 70°F with gentle breezes. Perfect weather for a walk in the garden or sitting outside."
+                        userQuery: "Is it warm enough to sit in the garden today?",
+                        apiResponse: "Yes, it's a beautiful day for the garden! It's currently 68°F with gentle sunshine. Perfect temperature for sitting outside comfortably."
+                    },
+                    {
+                        userQuery: "Do I need a sweater for my doctor's appointment?",
+                        apiResponse: "Yes, I'd recommend bringing a light sweater. It's 58°F outside with a cool breeze. You'll be comfortable with an extra layer."
                     }
                 ],
                 'Hotel Guests': [
                     {
-                        userQuery: "What's the weather like here? Should I pack an umbrella?",
-                        apiResponse: "The local weather is sunny with temperatures around 75°F. No rain expected today, so you can leave the umbrella in your room and enjoy exploring the city!"
+                        userQuery: "What's the weather like for sightseeing in Boston today?",
+                        apiResponse: "Great day for sightseeing in Boston! It's 69°F and sunny with light winds. Perfect for walking the Freedom Trail. Don't forget sunscreen!"
+                    }
+                ]
+            },
+            'Web Q&A': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "What are the best practices for setting up a mesh WiFi network in a small apartment?",
+                        apiResponse: "Based on current tech guides, for small apartments under 1000 sq ft, a single high-quality mesh router is usually sufficient. Place it centrally, avoid interference from microwaves, and consider WiFi 6E for future-proofing."
+                    },
+                    {
+                        userQuery: "How do I reduce my electric bill with smart home devices?",
+                        apiResponse: "According to energy efficiency studies, smart thermostats can save 10-15%, smart lighting 8-12%, and smart plugs for phantom loads another 5-10%. The EPA recommends starting with a programmable thermostat for maximum impact."
+                    }
+                ],
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "What's the latest on Matter compatibility for smart home devices?",
+                        apiResponse: "According to recent industry reports, Matter 1.2 now supports more device types including security cameras and vacuum cleaners. Major brands like Philips Hue, Samsung SmartThings, and Apple HomeKit are fully compatible."
+                    }
+                ],
+                'Millennials and Gen Z': [
+                    {
+                        userQuery: "What are the trending smart home aesthetics for 2025?",
+                        apiResponse: "Current design trends show minimalist hidden tech, sustainable materials, and ambient lighting systems. Pinterest and Instagram are featuring 'invisible tech' setups where smart devices blend seamlessly into decor."
                     }
                 ]
             },
             'ChitChat': {
                 'Millennials and Gen Z': [
                     {
-                        userQuery: "Talkative, what's trending today?",
-                        apiResponse: "Today's trending topics include sustainable living, new tech innovations, and some amazing food trends! Want me to dive deeper into any of these?"
+                        userQuery: "I'm so tired today, can we just chat for a bit?",
+                        apiResponse: "Of course! Sounds like you need a little pick-me-up. Want to talk about something fun? I could tell you about the cute robot dog videos that went viral today, or we could just vibe and chat about whatever's on your mind."
+                    },
+                    {
+                        userQuery: "This Monday is hitting different, you know?",
+                        apiResponse: "Oh absolutely, Monday energy is something else! At least we're making it through together. Maybe some good music or a funny meme break would help? I'm here if you want to vent or just chat about random stuff."
                     }
                 ],
                 'Early Adopters of Ambient Tech': [
                     {
-                        userQuery: "Tell me something interesting about AI today",
-                        apiResponse: "Did you know that ambient AI is now capable of predicting your needs before you even realize them? The latest developments in contextual awareness are truly fascinating!"
+                        userQuery: "I love how natural our conversations feel - this is the future of AI interaction",
+                        apiResponse: "Thank you! That's exactly what we're aiming for - making technology feel less like commands and more like natural conversation. The ambient computing revolution is really about making tech disappear into the background of daily life."
+                    }
+                ],
+                'Senior Citizens in Assisted Living': [
+                    {
+                        userQuery: "You remind me of my granddaughter - always so helpful",
+                        apiResponse: "That's such a sweet thing to say! I'm glad I can be helpful to you. It sounds like your granddaughter is wonderful. I'm always here whenever you need assistance or just want to chat."
+                    }
+                ]
+            },
+            'News': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "What's happening with tech layoffs this week?",
+                        apiResponse: "This week's tech news shows stabilizing job markets with several companies actually announcing new hiring initiatives. Meta and Google reported positive earnings, while several startups secured significant funding rounds."
+                    }
+                ],
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "Any news about data privacy with smart home devices?",
+                        apiResponse: "Recent news includes new FTC guidelines for IoT device manufacturers requiring clearer privacy disclosures. Several major smart home companies announced enhanced local processing to reduce cloud dependency."
+                    }
+                ]
+            },
+            'Product Q&A - Troubleshooting': {
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "My LG refrigerator keeps beeping and I don't know why",
+                        apiResponse: "The beeping usually indicates the door has been open too long or the temperature is too high. Check if the door is fully closed and sealed. If it continues, there might be a temperature sensor issue - I can help you run a diagnostic."
+                    },
+                    {
+                        userQuery: "The LG washing machine is showing error code UE, what does that mean?",
+                        apiResponse: "Error UE means unbalanced load. Try redistributing the clothes more evenly in the drum, or remove some items if it's overloaded. Run a spin cycle to test. If it persists, the machine may need leveling adjustment."
+                    }
+                ],
+                'Senior Citizens in Assisted Living': [
+                    {
+                        userQuery: "My LG TV remote isn't working properly",
+                        apiResponse: "Let's try a few simple fixes. First, try replacing the batteries in the remote. If that doesn't work, unplug your TV for 30 seconds and plug it back in. I can also help you use voice commands instead of the remote."
                     }
                 ]
             },
             'Timer': {
                 'Homeowners with Smart Ecosystems': [
                     {
-                        userQuery: "Set a 25-minute timer for my workout session",
-                        apiResponse: "Perfect! I've set a 25-minute workout timer. I'll also adjust your smart home lighting for optimal exercise conditions and play your workout playlist."
+                        userQuery: "Set a 20-minute timer for the roast in the oven",
+                        apiResponse: "I've set a 20-minute timer for your roast. I'll also remind you to check on it at 15 minutes. When the timer goes off, I can help adjust your oven settings if needed."
+                    }
+                ],
+                'Senior Citizens in Assisted Living': [
+                    {
+                        userQuery: "Can you remind me to take my medication in 4 hours?",
+                        apiResponse: "Absolutely! I've set a reminder for 4 hours from now to take your medication. I'll give you a clear announcement when it's time. Is this your usual afternoon medication?"
+                    }
+                ]
+            },
+            'Alarm': {
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "Set my alarm for 6:30 AM tomorrow, I have an early meeting",
+                        apiResponse: "Done! I've set your alarm for 6:30 AM tomorrow. That gives you plenty of time for your early meeting. I can also start your coffee maker at 6:25 if you'd like."
+                    }
+                ],
+                'Millennials and Gen Z': [
+                    {
+                        userQuery: "Wake me up at 7 AM but with something chill, not that jarring beep",
+                        apiResponse: "Got it! I've set a 7 AM alarm with gentle nature sounds - birds chirping and soft rain. Much better than harsh beeping. Sweet dreams!"
+                    }
+                ]
+            },
+            'Calendar': {
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "What's on my schedule for this Thursday?",
+                        apiResponse: "This Thursday you have: 9 AM dentist appointment, 2 PM conference call with the marketing team, and 6 PM dinner with Sarah. You have a free morning after 10:30 AM."
+                    }
+                ],
+                'Hotel Guests': [
+                    {
+                        userQuery: "Add my flight departure to my calendar - Delta 1247 at 3:15 PM Sunday",
+                        apiResponse: "I've added your Delta flight 1247 departure at 3:15 PM this Sunday to your calendar. I've also set a reminder for 11:15 AM to head to the airport, accounting for travel time and check-in."
+                    }
+                ]
+            },
+            'Routine creation': {
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "Create a 'movie night' routine that dims the lights, closes the blinds, and turns on the projector",
+                        apiResponse: "Perfect! I've created your 'Movie Night' routine. When activated, it will: dim all living room lights to 20%, close the smart blinds, turn on your projector, and set the sound system to cinema mode. Want to test it now?"
+                    }
+                ],
+                'Tech-Savvy Renters': [
+                    {
+                        userQuery: "Set up a morning routine that gradually turns on lights and starts my coffee maker",
+                        apiResponse: "Great idea! I've created a 'Good Morning' routine that starts 30 minutes before your alarm: gradual light increase from 10% to 80%, coffee maker starts 10 minutes before you wake up, and your favorite playlist begins softly. Should I activate this for weekdays only?"
+                    }
+                ]
+            },
+            'Routine execution': {
+                'Homeowners with Smart Ecosystems': [
+                    {
+                        userQuery: "Run my 'leaving home' routine",
+                        apiResponse: "Running your 'Leaving Home' routine now: locking all doors, turning off lights, setting thermostat to away mode, activating security system, and ensuring all smart devices are in energy-saving mode. Have a great day!"
+                    }
+                ],
+                'Early Adopters of Ambient Tech': [
+                    {
+                        userQuery: "Execute bedtime sequence",
+                        apiResponse: "Initiating your bedtime sequence: dimming all lights gradually over 10 minutes, lowering thermostat to 68°F, activating white noise, locking doors, and setting Do Not Disturb mode. Sleep well!"
                     }
                 ]
             }
@@ -351,10 +487,37 @@ class TalkativeDatasetGenerator {
             return skillTemplates[persona];
         }
 
-        // Default templates for any skill/persona combination
+        // Default templates for skills without persona-specific content
+        const defaultTemplates = {
+            'Device control': this.getDeviceControlTemplates(persona),
+            'Web Q&A': [
+                {
+                    userQuery: "What are the latest reviews for smart home security systems?",
+                    apiResponse: "Based on recent consumer reports, Ring and SimpliSafe are top-rated for 2025, with Ring scoring 4.3/5 for ease of use and SimpliSafe leading in professional monitoring services."
+                }
+            ],
+            'News': [
+                {
+                    userQuery: "What's the latest technology news today?",
+                    apiResponse: "Today's top tech stories include OpenAI's new model release, Microsoft's quarterly earnings beat expectations, and Tesla's new charging network expansion across the Midwest."
+                }
+            ],
+            'Product Q&A - Troubleshooting': [
+                {
+                    userQuery: "My LG dryer isn't heating up properly",
+                    apiResponse: "This could be a lint blockage or heating element issue. First, clean the lint filter and exhaust vent thoroughly. If the problem persists, the heating element may need professional service."
+                }
+            ]
+        };
+
+        if (defaultTemplates[skill]) {
+            return defaultTemplates[skill];
+        }
+
+        // Fallback for any unhandled skills
         return [
             {
-                userQuery: `Can you help me with ${skill.toLowerCase()}?`,
+                userQuery: `Help me with ${skill.toLowerCase()}`,
                 apiResponse: `I'd be happy to help you with ${skill.toLowerCase()}! What specifically would you like me to do?`
             }
         ];
