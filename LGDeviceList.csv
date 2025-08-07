@@ -1,0 +1,15 @@
+device_name,capabilities,status,category
+LG OLED TV,power_on|power_off|volume_control|channel_change|input_switch|brightness_adjust,Y,Entertainment
+LG Refrigerator,temperature_control|door_open_alert|ice_maker_control|water_filter_status,Y,Kitchen
+LG Washing Machine,start_cycle|pause_cycle|cycle_selection|time_remaining|maintenance_alert,Y,Laundry
+LG Dryer,start_cycle|pause_cycle|temperature_control|time_remaining|lint_filter_alert,Y,Laundry
+LG Dishwasher,start_cycle|pause_cycle|cycle_selection|detergent_level|rinse_aid_level,Y,Kitchen
+LG Air Conditioner,temperature_control|fan_speed|mode_change|timer_set|filter_alert,Y,Climate
+LG Air Purifier,power_on|power_off|fan_speed|air_quality_monitor|filter_replacement,Y,Climate
+LG Microwave,power_level|timer_set|defrost_mode|preset_cooking|door_open,Y,Kitchen
+LG Range/Oven,temperature_control|timer_set|preheat|cooking_mode|safety_lock,Y,Kitchen
+LG Robot Vacuum,start_cleaning|pause_cleaning|return_to_dock|schedule_cleaning|battery_status,Y,Cleaning
+LG Sound Bar,power_on|power_off|volume_control|sound_mode|bluetooth_connect,Y,Entertainment
+LG Water Heater,temperature_control|energy_mode|vacation_mode|maintenance_alert,Y,Utilities
+LG Garage Door Opener,open_door|close_door|door_status|light_control|lock_status,N,Security
+LG Smart Mirror,display_weather|display_calendar|fitness_tracking|skincare_analysis,N,Personal Care

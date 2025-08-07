@@ -1,0 +1,26 @@
+#,Appliance,Device Type,Micro Agent Name,Status
+1,Air conditioner,AIR_CONDITIONER,ACAgent,Y
+2,Air purifier,AIR_PURIFIER,AirPurifierAgent,Y
+3,Dehumidifier,DEHUMIDIFIER,DehumidifierAgent,Y
+4,Aero tower,AERO_TOWER,AeroTowerAgent,Y
+5,Kimchi refrigerator,KIMCHI_REFRIGERATOR,KimchiRefrigeratorAgent,Y
+6,Refrigerator,REFRIGERATOR,RefrigeratorAgent,Y
+7,Wine refrigerator,WINE_CELLAR,WineRefrigeratorAgent,Y
+8,Dishwasher,DISH_WASHER,DishWasherAgent,Y
+9,Cooktop,COOKTOP,CookTopAgent,Y
+10,Washing machine,WASHER,WasherAgent,Y
+11,Dryer,DRYER,DryerAgent,Y
+12,Wash tower washing machine - General,WASH_TOWER_WASHER,WashTowerAgent,Y
+13,Wash tower dryer - General,WASH_TOWER_DRYER,WashTowerAgent,Y
+14,Integrated wash tower,WASH_TOWER_ALL_IN_ONE,WashTowerAgent,Y
+15,Wash combo,WASH_COMBO_WASHER,WashComboAgent,Y
+16,Styler,STYLER,StylerAgent,Y
+17,Robot vacuum cleaner,CLEANER_ROBOT,RobotCleanerAgent,Y
+18,Stick vacuum cleaner,STICK_CLEANER,StickCleanerAgent,Y
+19,Thinq ON,SMART_HUB_LGE_THINQ_ON,VoiceHubAgent,Y
+20,Ceiling fan,CEILING_FAN,FanAgent,Y
+21,Humidifier,HUMIDIFIER,HumidifierAgent,Y
+22,Water purifier,WATER_PURIFIER,WaterPurifierAgent,Y
+23,Beer maker,HOME_BREW,BeerMakerAgent,Y
+24,Plant cultivation machine,PLANT_CULTIVATOR,PlantCultivatorAgent,Y
+25,WebOS TV,TV,TVAgent,Y
